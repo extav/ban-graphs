@@ -8,7 +8,8 @@ import {
 async function getSomeData() {
 //   const eid = 912275; // ban 30
 //   const eid = 954247; // ban 35
-  const eid = 962354; // ban 36
+  // const eid = 962354; // ban 36
+  const eid = 966758; // ban 37
 
 
 

@@ -83,13 +83,27 @@ function createPageStructure() {
   // config section
   const configSection = document.createElement("section");
   configSection.id = "config";
-  configSection.append(createPlayerSelectionBar());
+
+  const customizationSection = document.createElement("section");
+  customizationSection.id = "customization-section";
+
+  const controlsHeader = document.createElement("h1");
+  controlsHeader.textContent = "Select Contender";
+  customizationSection.appendChild(controlsHeader);
+  customizationSection.append(createPlayerSelectionBar());
   const submitButton = document.createElement("button");
   submitButton.textContent = "Generate";
   submitButton.type = "button";
   submitButton.id = "graph-button";
   submitButton.onclick = clickButtonGraph;
-  configSection.appendChild(submitButton);
+  customizationSection.appendChild(submitButton);
+  configSection.appendChild(customizationSection);
+
+  const infoSection = document.createElement("section");
+  infoSection.id = "creator-info";
+  infoSection.appendChild(document.createElement("h1"));
+  infoSection.appendChild(document.createElement("p"));
+  configSection.appendChild(infoSection);
 
   document.body.appendChild(configSection);
 
@@ -97,6 +111,13 @@ function createPageStructure() {
   clearGraph();
   // graphFromUserID(fig, main.dataObject, 1894586, "Extav");
   clickButtonGraph();
+}
+
+function fillInfoSection(title, content) {
+  const infoSec = document.querySelector("#creator-info");
+  // console.log(infoSec);
+  infoSec.children[0].textContent = title;
+  infoSec.children[1].textContent = content;
 }
 
 function clearGraph() {
@@ -158,4 +179,4 @@ function createPlayerSelectionBar() {
   return playerSelectionBar;
 }
 
-export { createPageStructure };
+export { createPageStructure, fillInfoSection };

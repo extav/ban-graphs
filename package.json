@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "updateWebpage" : "git subtree push --prefix dist origin gh-pages"
+    "updateWebpage" : "git subtree push --prefix dist origin gh-pages-v2"
   },
   "keywords": [],
   "author": "",

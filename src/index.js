@@ -10,7 +10,7 @@ import {
 
 // import data from "./testobj.json";
 import { testStuffOut } from "./plotly-testing";
-import { createPageStructure } from "./dom-manipulation";
+import { createPageStructure, fillInfoSection } from "./dom-manipulation";
 
 // here is what I used to get the object
 // const eHolder = await getEventIdsFromOwner(1525697);
@@ -39,5 +39,8 @@ import { createPageStructure } from "./dom-manipulation";
 // console.log(await getDataFromSpecificEvents(962354))
 
 createPageStructure();
+const infoText =
+  "This is the result of a for-fun and for-learning project. I make no promises that things aren't broken, but maybe you can have some fun looking at the data like I have. I'll probably add features, pages, and general improvements over time to make it less scuffed. Or maybe I won't. Enjoy. -Extav";
+fillInfoSection("Information", infoText);
 
 // getSomeData();

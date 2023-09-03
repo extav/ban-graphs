@@ -8,7 +8,7 @@ h3 {
 
 body {
   display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-columns: 1fr 3fr;
   grid-template-rows: 50px 1fr;
   /* background-color: bisque; */
   background-color: #fcd720;
@@ -35,10 +35,35 @@ main {
   grid-row-start: 2;
   grid-row-end: 3;
   background-color: lightgrey;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr;
+  border: 4px black solid;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+#customization-section,
+#creator-info {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+#creator-info p {
+  text-align: left;
 }
 
 select {
@@ -110,7 +135,7 @@ figure.main-section {
 }
 
 #info-section h3 {
-  font-size: 3rem
+  font-size: 3rem;
 }
 
 .stat-item {

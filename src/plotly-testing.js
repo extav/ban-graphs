@@ -220,7 +220,7 @@ function graphFromUserID(component, dataObj, uid, name) {
     mode: "markers+text",
     marker: {
       size: 0.9 * 30,
-      color: "red",
+      color: "#cd0024",
     },
     text: attendedKeys.map((k) => {
       return String(playerPlacements[k]);

@@ -1,118 +1,138 @@
 {
-  "962354": {
-    "name": "Bracket About Nothing #36 - Beginners Only GGST",
-    "startAt": 1692144000,
-    "numPlayers": 70,
+  "966758": {
+    "name": "Bracket About Nothing #37 - Beginners Only GGST",
+    "startAt": 1692748800,
+    "numPlayers": 77,
     "players": [
       {
-        "name": "KNQ | Copeee",
-        "userID": 2290941,
-        "placement": 65
-      },
-      {
-        "name": "IonGravityBeam",
-        "userID": 2224291,
-        "placement": 33
-      },
-      {
-        "name": "TheAutumnBandit",
-        "userID": 1773683,
-        "placement": 5
-      },
-      {
-        "name": "Kyubert (yourf)",
-        "userID": 1967657,
-        "placement": 9
-      },
-      {
-        "name": "finnickyfinn",
-        "userID": 2290382,
-        "placement": 25
-      },
-      {
-        "name": "Yo | YoFate",
-        "userID": 2298131,
-        "placement": 25
-      },
-      {
-        "name": "Ina",
-        "userID": 2298229,
-        "placement": 33
-      },
-      {
-        "name": "rkp!",
-        "userID": 2152171,
-        "placement": 33
-      },
-      {
-        "name": "Aris_",
-        "userID": 2038530,
-        "placement": 1
-      },
-      {
-        "name": "TREE | Adyune",
-        "userID": 2223215,
+        "name": "Andromedus",
+        "userID": 1246979,
         "placement": 49
       },
       {
-        "name": "Tinytvhd",
-        "userID": 1764477,
-        "placement": 25
+        "name": "Haps Paps",
+        "userID": 2241800,
+        "placement": 13
       },
       {
-        "name": "HCHY | Bunny",
-        "userID": 2149876,
-        "placement": 25
+        "name": "Swopey",
+        "userID": 1869574,
+        "placement": 49
       },
       {
-        "name": "HCHY | ELDR",
-        "userID": 2151796,
-        "placement": 3
+        "name": "nhan",
+        "userID": 870994,
+        "placement": 65
       },
       {
-        "name": "D.b. Xavi",
-        "userID": 2214303,
-        "placement": 4
+        "name": "Sylkai",
+        "userID": 1752773,
+        "placement": 65
       },
       {
-        "name": "codepop",
-        "userID": 2284319,
+        "name": "TG | Aidenosine",
+        "userID": 2114391,
         "placement": 33
       },
       {
-        "name": "Ez BriZ",
-        "userID": 2281370,
-        "placement": 25
+        "name": "Reldnahc",
+        "userID": 1650675,
+        "placement": 49
       },
       {
         "name": "MØN | Intimidaving",
         "userID": 798421,
-        "placement": 5
+        "placement": 4
       },
       {
-        "name": "F444 | Fyre",
-        "userID": 2225356,
-        "placement": 49
-      },
-      {
-        "name": "Sleepy | shadowgeko",
-        "userID": 1371437,
-        "placement": 13
-      },
-      {
-        "name": "Ihatelolis7434",
-        "userID": 1777535,
-        "placement": 49
-      },
-      {
-        "name": "OEG | Westfield",
-        "userID": 1885322,
+        "name": "Topthehat",
+        "userID": 2306416,
         "placement": 49
       },
       {
         "name": "Capy",
         "userID": 2298922,
-        "placement": 7
+        "placement": 33
+      },
+      {
+        "name": "Sleepy | shadowgeko",
+        "userID": 1371437,
+        "placement": 3
+      },
+      {
+        "name": "MetaMischief",
+        "userID": 1891661,
+        "placement": 49
+      },
+      {
+        "name": "DOC_COMMON",
+        "userID": 1960246,
+        "placement": 25
+      },
+      {
+        "name": "Ihatelolis7434",
+        "userID": 1777535,
+        "placement": 17
+      },
+      {
+        "name": "Runa",
+        "userID": 664436,
+        "placement": 33
+      },
+      {
+        "name": "AlexIsSleepy",
+        "userID": 1307419,
+        "placement": 9
+      },
+      {
+        "name": "Griz",
+        "userID": 2152923,
+        "placement": 65
+      },
+      {
+        "name": "Artagan",
+        "userID": 2189401,
+        "placement": 33
+      },
+      {
+        "name": "Sleepy | Mariip",
+        "userID": 2060792,
+        "placement": 25
+      },
+      {
+        "name": "OEG | Westfield",
+        "userID": 1885322,
+        "placement": 25
+      },
+      {
+        "name": "KosmEnjoyer",
+        "userID": 2056714,
+        "placement": 49
+      },
+      {
+        "name": "TFG BBB | Plush_Lama",
+        "userID": 1000651,
+        "placement": 17
+      },
+      {
+        "name": "HCHY | Bunny",
+        "userID": 2149876,
+        "placement": 49
+      },
+      {
+        "name": "MadHyyper",
+        "userID": 1139262,
+        "placement": 17
+      },
+      {
+        "name": "Grimm",
+        "userID": 2242990,
+        "placement": 33
+      },
+      {
+        "name": "LeviMaybe",
+        "userID": 2265873,
+        "placement": 33
       },
       {
         "name": "TK | Yung Peezy",
@@ -120,63 +140,63 @@
         "placement": 65
       },
       {
-        "name": "Sleepy | Mariip",
-        "userID": 2060792,
+        "name": "Rice Cube",
+        "userID": 2208220,
         "placement": 65
       },
       {
-        "name": "C&C | Solric",
-        "userID": 2069018,
-        "placement": 49
+        "name": "Kyubert (yourf)",
+        "userID": 1967657,
+        "placement": 5
       },
       {
-        "name": "Z-Mega",
-        "userID": 1307707,
-        "placement": 65
-      },
-      {
-        "name": "Skartee",
-        "userID": 1905802,
+        "name": "LMA | Asurawave",
+        "userID": 2274117,
         "placement": 33
       },
       {
-        "name": "Deceptionz",
-        "userID": 2269525,
+        "name": "Dunium",
+        "userID": 2270524,
         "placement": 9
       },
       {
-        "name": "Rat Orion",
-        "userID": 2232310,
-        "placement": 49
+        "name": "TREE | Adyune",
+        "userID": 2223215,
+        "placement": 65
       },
       {
-        "name": "Cheezi",
-        "userID": 2261331,
-        "placement": 33
-      },
-      {
-        "name": "void*",
-        "userID": 904587,
+        "name": "MLP | Hotline",
+        "userID": 590910,
         "placement": 17
       },
       {
-        "name": "Stergelman",
-        "userID": 2138295,
+        "name": "Pome",
+        "userID": 2155775,
+        "placement": 17
+      },
+      {
+        "name": "Simp | Simp2TheResimpining",
+        "userID": 2306481,
+        "placement": 49
+      },
+      {
+        "name": "WasaabiSol",
+        "userID": 2258320,
+        "placement": 49
+      },
+      {
+        "name": "Speg",
+        "userID": 1962466,
         "placement": 33
       },
       {
-        "name": "skypher56",
-        "userID": 1158778,
-        "placement": 25
+        "name": "basedracc",
+        "userID": 2234588,
+        "placement": 49
       },
       {
-        "name": "META | MetaMischief",
-        "userID": 1891661,
-        "placement": 33
-      },
-      {
-        "name": "Urizer",
-        "userID": 2294592,
+        "name": "CoffeeFields101",
+        "userID": 856325,
         "placement": 33
       },
       {
@@ -185,53 +205,48 @@
         "placement": 17
       },
       {
-        "name": "BAN | JayC",
-        "userID": 1788398,
+        "name": "BAN | kelsoryuken",
+        "userID": 2204029,
         "placement": 49
       },
       {
-        "name": "Grimm",
-        "userID": 2242990,
-        "placement": 49
+        "name": "Deceptionz",
+        "userID": 2269525,
+        "placement": 7
       },
       {
         "name": "ChazahC",
         "userID": 2130881,
-        "placement": 17
+        "placement": 25
       },
       {
-        "name": "Rebix",
-        "userID": 1926418,
+        "name": "PRIDE",
+        "userID": 1006517,
+        "placement": 25
+      },
+      {
+        "name": "KS | Kyochan",
+        "userID": 1395356,
         "placement": 49
       },
       {
-        "name": "Chistaphee",
-        "userID": 1397433,
-        "placement": 2
+        "name": "skypher56",
+        "userID": 1158778,
+        "placement": 13
       },
       {
-        "name": "basedracc",
-        "userID": 2234588,
-        "placement": 17
+        "name": "BAN | JayC",
+        "userID": 1788398,
+        "placement": 65
       },
       {
-        "name": "Smallz",
-        "userID": 2216539,
-        "placement": 17
+        "name": "StarryAri",
+        "userID": 2235716,
+        "placement": 33
       },
       {
-        "name": "WasaabiSol",
-        "userID": 2258320,
-        "placement": 49
-      },
-      {
-        "name": "Sefferton",
-        "userID": 2242986,
-        "placement": 7
-      },
-      {
-        "name": "WCU | Ryoka",
-        "userID": 1660718,
+        "name": "NH | Shoji",
+        "userID": 1546716,
         "placement": 49
       },
       {
@@ -240,109 +255,124 @@
         "placement": 25
       },
       {
-        "name": "WCNoisyboy",
-        "userID": 2216960,
-        "placement": 13
-      },
-      {
-        "name": "RazelRhapsody",
-        "userID": 2086774,
-        "placement": 13
-      },
-      {
-        "name": "Artagan",
-        "userID": 2189401,
-        "placement": 25
-      },
-      {
-        "name": "Swefoxz",
-        "userID": 1979279,
+        "name": "LS | Ikusaba",
+        "userID": 770769,
         "placement": 49
       },
       {
-        "name": "Kenji",
-        "userID": 2215693,
-        "placement": 17
+        "name": "WCNoisyboy",
+        "userID": 2216960,
+        "placement": 33
+      },
+      {
+        "name": "Smallz",
+        "userID": 2216539,
+        "placement": 5
+      },
+      {
+        "name": "finnickyfinn",
+        "userID": 2290382,
+        "placement": 9
+      },
+      {
+        "name": "JDA",
+        "userID": 1790833,
+        "placement": 13
+      },
+      {
+        "name": "1Nsane",
+        "userID": 1605077,
+        "placement": 33
       },
       {
         "name": "Tsumi",
         "userID": 1996730,
-        "placement": 33
+        "placement": 17
       },
       {
-        "name": "rezasutra",
-        "userID": 833819,
-        "placement": 33
+        "name": "Rat Orion",
+        "userID": 2232310,
+        "placement": 49
       },
       {
-        "name": "Geetahr",
-        "userID": 2108353,
+        "name": "Tetsuwan Melty",
+        "userID": 1451543,
         "placement": 33
       },
       {
         "name": "BED WITH NO MAN",
         "userID": 2203731,
+        "placement": 33
+      },
+      {
+        "name": "RazelRhapsody",
+        "userID": 2086774,
         "placement": 9
       },
       {
-        "name": "KS | Kyochan",
-        "userID": 1395356,
-        "placement": 49
-      },
-      {
-        "name": "KosmEnjoyer",
-        "userID": 2056714,
-        "placement": 33
-      },
-      {
-        "name": "Iceman",
-        "userID": 1136431,
-        "placement": 33
+        "name": "Sefferton",
+        "userID": 2242986,
+        "placement": 2
       },
       {
         "name": "Goteki_",
         "userID": 445469,
-        "placement": 49
+        "placement": 65
+      },
+      {
+        "name": "Rebix",
+        "userID": 1926418,
+        "placement": 65
+      },
+      {
+        "name": "D.b. Xavi",
+        "userID": 2214303,
+        "placement": 1
+      },
+      {
+        "name": "Bilnd",
+        "userID": 2273193,
+        "placement": 65
       },
       {
         "name": "ezlf | Jubilee",
         "userID": 2164725,
-        "placement": 13
-      },
-      {
-        "name": "JahNee",
-        "userID": 1191307,
-        "placement": 49
-      },
-      {
-        "name": "Puppsss",
-        "userID": 2108602,
-        "placement": 9
-      },
-      {
-        "name": "Pome",
-        "userID": 2155775,
         "placement": 17
-      },
-      {
-        "name": "inkyfaye",
-        "userID": 2041220,
-        "placement": 49
-      },
-      {
-        "name": "Bucky",
-        "userID": 2148663,
-        "placement": 33
       },
       {
         "name": "Tiro",
         "userID": 2049992,
+        "placement": 25
+      },
+      {
+        "name": "inkyfaye",
+        "userID": 2041220,
         "placement": 33
       },
       {
-        "name": "Tetsuwan Melty",
-        "userID": 1451543,
-        "placement": 17
+        "name": "Faulty",
+        "userID": 2270405,
+        "placement": 13
+      },
+      {
+        "name": "evil men yaoi",
+        "userID": 809299,
+        "placement": 33
+      },
+      {
+        "name": "Cyndaquilrockz",
+        "userID": 2296008,
+        "placement": 7
+      },
+      {
+        "name": "void*",
+        "userID": 904587,
+        "placement": 25
+      },
+      {
+        "name": "0wl",
+        "userID": 2063739,
+        "placement": 49
       }
     ]
   }
