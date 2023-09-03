@@ -12,7 +12,7 @@ module.exports = {
   devtool: "inline-source-map",
   plugins: [
     new HtmlWebpackPlugin({
-      title: "plotly-testing",
+      title: "BAN Stats",
     }),
   ],
   module: {

@@ -178,6 +178,8 @@ function testStuffOut() {
   Plotly.newPlot("myDiv", data, layout, { staticPlot: true });
 }
 
+function calcNumAndPlacement(dataObj, uid) {}
+
 function graphFromUserID(component, dataObj, uid, name) {
   console.log("Starting GFUID with uid " + uid);
   // console.log(dataObj);
@@ -217,7 +219,7 @@ function graphFromUserID(component, dataObj, uid, name) {
     // type: "scatter",
     mode: "markers+text",
     marker: {
-      size: 0.9 * 35,
+      size: 0.9 * 30,
       color: "red",
     },
     text: attendedKeys.map((k) => {
@@ -235,7 +237,7 @@ function graphFromUserID(component, dataObj, uid, name) {
   let graphData = [trace1, trace2];
 
   let layout = {
-    title: "BAN Performance over Time: " + name,
+    // title: "BAN Performance over Time: " + name,
     showlegend: false,
     font: {
       size: 24,
@@ -243,20 +245,37 @@ function graphFromUserID(component, dataObj, uid, name) {
     xaxis: {
       range: [-1, sortedPlayerCount.length],
       showticklabels: false,
-      title: {
-        text: "All Ban Tournaments",
-      },
+      // title: {
+      //   text: "All Ban Tournaments",
+      // },
     },
     yaxis: {
-      title: {
-        text: "Entrant Count",
-      },
+      range: [0, Math.max(...sortedPlayerCount)],
+      // title: {
+      //   text: "Entrant Count",
+      // },
     },
     paper_bgcolor: "#fcd720",
     plot_bgcolor: "#fcd720",
+    margin: {
+      l: 35,
+      r: 0,
+      t: 0,
+      b: 0,
+    },
+    width: 900,
+    height: 300,
   };
 
   Plotly.newPlot(component, graphData, layout, { staticPlot: true });
+
+  const numCompeted = attendedKeys.length;
+  const bestPlacement = Math.min(
+    ...attendedKeys.map((k) => {
+      return playerPlacements[k];
+    })
+  );
+  return [numCompeted, bestPlacement];
 }
 
 export {
