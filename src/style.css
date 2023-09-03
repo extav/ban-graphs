@@ -1,0 +1,36 @@
+body {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr 3fr;
+  /* background-color: bisque; */
+  background-color: #fcd720;
+}
+
+main {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#config {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  background-color: lightgrey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+select {
+    width: 10rem;
+}
+
+figure {
+    min-width: 1200px;
+}

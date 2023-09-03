@@ -1,0 +1,19 @@
+to-do
+
+- use the package from the video to conceal my key
+- learn to use plotly to make the desired graph
+
+
+
+----- the master object -----
+
+obj
+  - key: event ID
+  -----
+  - name: string
+  - date: (date format)
+  - numPlayers: int
+  - players: array of objects
+    - name: string
+    - userID: int
+    - placement: int
