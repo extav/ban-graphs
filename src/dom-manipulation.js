@@ -184,15 +184,59 @@ function createPlayerSelectionBar() {
 function createStreamStatpageStructure() {
   const content = document.createElement("div");
   content.classList.add("sp-content");
+  content.dataObject = onlyBeginners(data);
 
   const controls = document.createElement("div");
   controls.classList.add("sp-controls");
 
   const overlay = document.createElement("div");
   overlay.classList.add("sp-overlay");
-  const img = document.createElement("img");
-  img.src = StatOverlay;
-  overlay.appendChild(img);
+  overlay.style.backgroundImage = `url(${StatOverlay})`;
+  // const img = document.createElement("img");
+  // img.src = StatOverlay;
+  // overlay.appendChild(img);
+
+  // ----- Manage the Top Bar ----- //
+  const vsText = document.createElement("div");
+  vsText.id = "vsText";
+  vsText.textContent = "VS";
+  overlay.appendChild(vsText);
+
+  const p1name = document.createElement("div");
+  p1name.id = "sp-p1name";
+  p1name.textContent = "ExTav";
+  overlay.appendChild(p1name);
+
+  const p2name = document.createElement("div");
+  p2name.id = "sp-p2name";
+  p2name.textContent = "BAN | Cyxie";
+  overlay.appendChild(p2name);
+
+  // ----- Manage the Content Areas ----- //
+  const p1area = document.createElement("div");
+  p1area.id = "sp-p1area";
+  // make the first stat-item
+  let component = document.createElement("div");
+  component.classList.add("sp-stat-item");
+  let compHeader = document.createElement("h1");
+  compHeader.textContent = "BANs Competed";
+  component.appendChild(compHeader);
+  let compValue = document.createElement("h2");
+  compValue.textContent = "500";
+  component.appendChild(compValue);
+  p1area.appendChild(component);
+  // make the second stat-item
+  component = document.createElement("div");
+  component.classList.add("sp-stat-item");
+  compHeader = document.createElement("h1");
+  compHeader.textContent = "Best Placement";
+  component.appendChild(compHeader);
+  compValue = document.createElement("h2");
+  compValue.textContent = "250";
+  component.appendChild(compValue);
+  p1area.appendChild(component);
+
+  overlay.appendChild(p1area);
 
   content.appendChild(overlay);
   content.appendChild(controls);
