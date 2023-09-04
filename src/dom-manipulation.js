@@ -188,6 +188,7 @@ async function createStreamStatpageStructure() {
   const content = document.createElement("div");
   content.classList.add("sp-content");
   content.dataObject = onlyBeginners(data);
+  content.dataUserArray = createUserArrays(content.dataObject)[0];
 
   const controls = document.createElement("div");
   controls.classList.add("sp-controls");
@@ -243,6 +244,11 @@ async function createStreamStatpageStructure() {
   graphArea.id = "sp-p1graph";
   p1area.appendChild(graphArea);
 
+  const p1NewChallenger = document.createElement("div");
+  p1NewChallenger.textContent = "A NEW CHALLENGER APPROACHES";
+  p1NewChallenger.style.display = "none";
+  p1area.appendChild(p1NewChallenger);
+
   overlay.appendChild(p1area);
 
   // make p2 area
@@ -272,6 +278,11 @@ async function createStreamStatpageStructure() {
   const graphArea2 = document.createElement("div");
   graphArea2.id = "sp-p2graph";
   p2area.appendChild(graphArea2);
+
+  const p2NewChallenger = document.createElement("div");
+  p2NewChallenger.textContent = "A NEW CHALLENGER APPROACHES";
+  p2NewChallenger.style.display = "none";
+  p2area.appendChild(p2NewChallenger);
 
   overlay.appendChild(p2area);
 
@@ -312,54 +323,115 @@ async function createStreamStatpageStructure() {
   document.body.appendChild(content);
 }
 
-function buttonStatpageRefresh() {
-  // --- player 1
-  const p1name = document.querySelector("#sp-p1box").textContent;
-  const p1Uid = parseInt(document.querySelector("#sp-p1box").value);
-  const p1graph = document.querySelector("#sp-p1graph");
+function updateStatpageHalf(spot) {
+  const name = document.querySelector(`#sp-p${spot}box`).textContent;
+  const uid = parseInt(document.querySelector(`#sp-p${spot}box`).value);
+  const graph = document.querySelector(`#sp-p${spot}graph`);
   const dataObj = document.querySelector(".sp-content").dataObject;
-  // console.log(document.querySelector(".sp-controls"));
 
-  const [p1numCompeted, p1bestPlacement] = statpageGraphFromUserID(
-    p1graph,
+  if (!document.querySelector(".sp-content").dataUserArray.includes(`${uid}`)) {
+    document.querySelector(`#sp-p${spot}name`).textContent = name;
+    document.querySelector(`#sp-p${spot}area`).children[0].style.display =
+      "none";
+    document.querySelector(`#sp-p${spot}area`).children[1].style.display =
+      "none";
+    document.querySelector(`#sp-p${spot}area`).children[2].style.display =
+      "none";
+    document.querySelector(`#sp-p${spot}area`).children[3].style.display =
+      "flex";
+    return;
+  }
+
+  document.querySelector(`#sp-p${spot}area`).children[0].style.display =
+    "flex";
+  document.querySelector(`#sp-p${spot}area`).children[1].style.display =
+    "flex";
+  document.querySelector(`#sp-p${spot}area`).children[2].style.display =
+    "flex";
+  document.querySelector(`#sp-p${spot}area`).children[3].style.display = "none";
+  const [numCompeted, bestPlacement] = statpageGraphFromUserID(
+    graph,
     dataObj,
-    p1Uid,
-    p1name
+    uid,
+    name
   );
-  console.log(p1numCompeted);
-  document.querySelector("#sp-p1name").textContent = p1name;
-  document.querySelector("#sp-p1area").children[0].children[1].textContent =
-    p1numCompeted;
-  document.querySelector("#sp-p1area").children[1].children[1].textContent =
-    p1bestPlacement;
+  document.querySelector(`#sp-p${spot}name`).textContent = name;
+  document.querySelector(
+    `#sp-p${spot}area`
+  ).children[0].children[1].textContent = numCompeted;
+  document.querySelector(
+    `#sp-p${spot}area`
+  ).children[1].children[1].textContent = bestPlacement;
+}
 
-  // --- player 2
-  const p2name = document.querySelector("#sp-p2box").textContent;
-  const p2Uid = parseInt(document.querySelector("#sp-p2box").value);
-  const p2graph = document.querySelector("#sp-p2graph");
-  // const dataObj = document.querySelector(".sp-content").dataObject;
-  // console.log(document.querySelector(".sp-controls"));
+// function buttonStatpageRefresh() {
+//   // --- player 1
+//   const p1name = document.querySelector("#sp-p1box").textContent;
+//   const p1Uid = parseInt(document.querySelector("#sp-p1box").value);
+//   const p1graph = document.querySelector("#sp-p1graph");
+//   const dataObj = document.querySelector(".sp-content").dataObject;
+//   // console.log(document.querySelector(".sp-controls"));
 
-  const [p2numCompeted, p2bestPlacement] = statpageGraphFromUserID(
-    p2graph,
-    dataObj,
-    p2Uid,
-    p2name
-  );
-  console.log(p1numCompeted);
-  document.querySelector("#sp-p2name").textContent = p2name;
-  document.querySelector("#sp-p2area").children[0].children[1].textContent =
-    p2numCompeted;
-  document.querySelector("#sp-p2area").children[1].children[1].textContent =
-    p2bestPlacement;
+//   const [p1numCompeted, p1bestPlacement] = statpageGraphFromUserID(
+//     p1graph,
+//     dataObj,
+//     p1Uid,
+//     p1name
+//   );
+//   // console.log(p1numCompeted);
+//   document.querySelector("#sp-p1name").textContent = p1name;
+//   document.querySelector("#sp-p1area").children[0].children[1].textContent =
+//     p1numCompeted;
+//   document.querySelector("#sp-p1area").children[1].children[1].textContent =
+//     p1bestPlacement;
+
+//   // --- player 2
+//   const p2name = document.querySelector("#sp-p2box").textContent;
+//   const p2Uid = parseInt(document.querySelector("#sp-p2box").value);
+//   const p2graph = document.querySelector("#sp-p2graph");
+//   // const dataObj = document.querySelector(".sp-content").dataObject;
+//   // console.log(document.querySelector(".sp-controls"));
+
+//   const [p2numCompeted, p2bestPlacement] = statpageGraphFromUserID(
+//     p2graph,
+//     dataObj,
+//     p2Uid,
+//     p2name
+//   );
+//   console.log(p1numCompeted);
+//   document.querySelector("#sp-p2name").textContent = p2name;
+//   document.querySelector("#sp-p2area").children[0].children[1].textContent =
+//     p2numCompeted;
+//   document.querySelector("#sp-p2area").children[1].children[1].textContent =
+//     p2bestPlacement;
+// }
+
+function buttonStatpageRefresh() {
+  updateStatpageHalf(1);
+  updateStatpageHalf(2);
 }
 
 function populatePlayerChooseRegion(playerObj, region, target) {
-  Object.keys(playerObj).map((k) => {
+  const keys = Object.keys(playerObj)
+  const names = keys.map((k) => playerObj[k]);
+
+  const [sortedKeys, sortedNames] = sortArraysbyArray(names, [keys, names])
+  
+  // Object.keys(playerObj).map((k) => {
+  //   const nameRegion = document.createElement("div");
+  //   nameRegion.classList.add("player-select-name");
+  //   nameRegion.textContent = playerObj[k];
+  //   nameRegion.dataUid = k;
+  //   nameRegion.dataTarget = target;
+
+  //   nameRegion.addEventListener("click", modifyPlayerBox);
+  //   region.appendChild(nameRegion);
+  // });
+  sortedKeys.map((k, i) => {
     const nameRegion = document.createElement("div");
     nameRegion.classList.add("player-select-name");
-    nameRegion.textContent = playerObj[k];
-    nameRegion.dataUid = k;
+    nameRegion.textContent = sortedNames[i];
+    nameRegion.dataUid = sortedKeys[i];
     nameRegion.dataTarget = target;
 
     nameRegion.addEventListener("click", modifyPlayerBox);

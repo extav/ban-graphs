@@ -302,8 +302,6 @@ function statpageGraphFromUserID(component, dataObj, uid, name) {
     },
   };
 
-  console.log(Array.from(sortedPlayerCount.keys()));
-  console.log(sortedPlayerCount);
   // ugly create second part -------------
   const attendedKeys = Array.from(playerPlacements.keys()).filter((k) => {
     if (playerPlacements[k] !== 0) {
