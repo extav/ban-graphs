@@ -4,6 +4,7 @@ import {
   getDataFromEventIds,
   getDataFromSpecificEvents,
   getEventIdsFromOwner,
+  getPlayersFromSlug,
 } from "./startggquery";
 
 // import { getSomeData } from "./data-grafting";
@@ -44,6 +45,9 @@ import {
 
 if (document.title === "BAN Statpage") {
   console.log("running first option");
+  await getPlayersFromSlug(
+    "tournament/bracket-about-nothing-37-beginners-only-ggst/event/ggst-singles"
+  );
   createStreamStatpageStructure();
 } else {
   console.log("running second option");

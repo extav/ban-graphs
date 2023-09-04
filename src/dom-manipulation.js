@@ -1,14 +1,17 @@
 import "./style.css";
 import data from "./testobj.json";
+import playerData from "./ban37players.json";
 import {
   onlyBeginners,
   genUserIdObject,
   createUserArrays,
   sortArraysbyArray,
   graphFromUserID,
+  statpageGraphFromUserID,
 } from "./plotly-testing";
 
 import StatOverlay from "./Statscreen-resized.svg";
+import { getPlayersFromSlug } from "./startggquery";
 
 // console.log(onlyBeginners(data));
 // console.log(createUserArrays(onlyBeginners(data)));
@@ -181,7 +184,7 @@ function createPlayerSelectionBar() {
   return playerSelectionBar;
 }
 
-function createStreamStatpageStructure() {
+async function createStreamStatpageStructure() {
   const content = document.createElement("div");
   content.classList.add("sp-content");
   content.dataObject = onlyBeginners(data);
@@ -235,12 +238,141 @@ function createStreamStatpageStructure() {
   compValue.textContent = "250";
   component.appendChild(compValue);
   p1area.appendChild(component);
+  // make the area for a graph
+  const graphArea = document.createElement("div");
+  graphArea.id = "sp-p1graph";
+  p1area.appendChild(graphArea);
 
   overlay.appendChild(p1area);
+
+  // make p2 area
+  const p2area = document.createElement("div");
+  p2area.id = "sp-p2area";
+  // make the first stat-item
+  component = document.createElement("div");
+  component.classList.add("sp-stat-item");
+  compHeader = document.createElement("h1");
+  compHeader.textContent = "BANs Competed";
+  component.appendChild(compHeader);
+  compValue = document.createElement("h2");
+  compValue.textContent = "500";
+  component.appendChild(compValue);
+  p2area.appendChild(component);
+  // make the second stat-item
+  component = document.createElement("div");
+  component.classList.add("sp-stat-item");
+  compHeader = document.createElement("h1");
+  compHeader.textContent = "Best Placement";
+  component.appendChild(compHeader);
+  compValue = document.createElement("h2");
+  compValue.textContent = "250";
+  component.appendChild(compValue);
+  p2area.appendChild(component);
+  // make the area for a graph
+  const graphArea2 = document.createElement("div");
+  graphArea2.id = "sp-p2graph";
+  p2area.appendChild(graphArea2);
+
+  overlay.appendChild(p2area);
+
+  // ----- Create the Controls area Below ----- //
+
+  // controls.dataPlayersObj = await getPlayersFromSlug(
+  //   "tournament/bracket-about-nothing-37-beginners-only-ggst/event/ggst-singles"
+  // );
+  controls.dataPlayersObj = playerData;
+
+  const p1box = document.createElement("div");
+  p1box.id = "sp-p1box";
+  p1box.textContent = "PICK SOMETHING";
+  const p1chooseRegion = document.createElement("div");
+  p1chooseRegion.id = "sp-p1choose";
+  populatePlayerChooseRegion(controls.dataPlayersObj, p1chooseRegion, p1box);
+
+  const p2box = document.createElement("div");
+  p2box.id = "sp-p2box";
+  p2box.textContent = "PICK SOMETHING";
+  const p2chooseRegion = document.createElement("div");
+  p2chooseRegion.id = "sp-p2choose";
+  populatePlayerChooseRegion(controls.dataPlayersObj, p2chooseRegion, p2box);
+
+  const updateButton = document.createElement("button");
+  updateButton.id = "statpage-update-button";
+  updateButton.textContent = "Update";
+  updateButton.onclick = buttonStatpageRefresh;
+
+  controls.appendChild(p1chooseRegion);
+  controls.appendChild(p1box);
+  controls.appendChild(updateButton);
+  controls.appendChild(p2box);
+  controls.appendChild(p2chooseRegion);
 
   content.appendChild(overlay);
   content.appendChild(controls);
   document.body.appendChild(content);
+}
+
+function buttonStatpageRefresh() {
+  // --- player 1
+  const p1name = document.querySelector("#sp-p1box").textContent;
+  const p1Uid = parseInt(document.querySelector("#sp-p1box").value);
+  const p1graph = document.querySelector("#sp-p1graph");
+  const dataObj = document.querySelector(".sp-content").dataObject;
+  // console.log(document.querySelector(".sp-controls"));
+
+  const [p1numCompeted, p1bestPlacement] = statpageGraphFromUserID(
+    p1graph,
+    dataObj,
+    p1Uid,
+    p1name
+  );
+  console.log(p1numCompeted);
+  document.querySelector("#sp-p1name").textContent = p1name;
+  document.querySelector("#sp-p1area").children[0].children[1].textContent =
+    p1numCompeted;
+  document.querySelector("#sp-p1area").children[1].children[1].textContent =
+    p1bestPlacement;
+
+  // --- player 2
+  const p2name = document.querySelector("#sp-p2box").textContent;
+  const p2Uid = parseInt(document.querySelector("#sp-p2box").value);
+  const p2graph = document.querySelector("#sp-p2graph");
+  // const dataObj = document.querySelector(".sp-content").dataObject;
+  // console.log(document.querySelector(".sp-controls"));
+
+  const [p2numCompeted, p2bestPlacement] = statpageGraphFromUserID(
+    p2graph,
+    dataObj,
+    p2Uid,
+    p2name
+  );
+  console.log(p1numCompeted);
+  document.querySelector("#sp-p2name").textContent = p2name;
+  document.querySelector("#sp-p2area").children[0].children[1].textContent =
+    p2numCompeted;
+  document.querySelector("#sp-p2area").children[1].children[1].textContent =
+    p2bestPlacement;
+}
+
+function populatePlayerChooseRegion(playerObj, region, target) {
+  Object.keys(playerObj).map((k) => {
+    const nameRegion = document.createElement("div");
+    nameRegion.classList.add("player-select-name");
+    nameRegion.textContent = playerObj[k];
+    nameRegion.dataUid = k;
+    nameRegion.dataTarget = target;
+
+    nameRegion.addEventListener("click", modifyPlayerBox);
+    region.appendChild(nameRegion);
+  });
+}
+
+function modifyPlayerBox(e) {
+  // this.target.textContent = this.textContent;
+  e.target.dataTarget.textContent = e.target.textContent;
+  e.target.dataTarget.value = e.target.dataUid;
+
+  // this.target.value = this.dataUid;
 }
 
 export { createPageStructure, fillInfoSection, createStreamStatpageStructure };

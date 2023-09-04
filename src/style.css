@@ -183,7 +183,7 @@ figure.main-section {
 #sp-p1name,
 #sp-p2name {
   font-size: 3rem;
-  color: #fcd720;
+  color: #e8bc4d;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -204,7 +204,13 @@ figure.main-section {
   grid-column: 1 / 3;
 }
 
-#sp-p1area {
+#sp-p2area {
+  grid-row: 2 / 3;
+  grid-column: 3 / 5;
+}
+
+#sp-p1area,
+#sp-p2area {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -213,7 +219,7 @@ figure.main-section {
 }
 
 .sp-stat-item {
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -223,3 +229,34 @@ figure.main-section {
 #sp-stat-item > h2 {
   text-align: center;
 } */
+
+#sp-p1choose,
+#sp-p2choose {
+  width: 30rem;
+  height: 30rem;
+  background-color: white;
+  /* eventually scroll if overflow */
+  overflow-y: scroll;
+  font-size: 2rem;
+}
+
+#sp-p1box,
+#sp-p2box {
+  border: 1px solid black;
+  background-color: white;
+  width: 20rem;
+  height: 2rem;
+  font-size: 2rem;
+}
+
+.sp-controls {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+}
+
+#statpage-update-button {
+  font-size: 2rem;
+  
+}

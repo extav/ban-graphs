@@ -278,6 +278,106 @@ function graphFromUserID(component, dataObj, uid, name) {
   return [numCompeted, bestPlacement];
 }
 
+function statpageGraphFromUserID(component, dataObj, uid, name) {
+  // console.log("Starting GFUID with uid " + uid);
+  // console.log(dataObj);
+  const playerCount = getPlayerCount(dataObj);
+  const tourneyTimes = getStartAt(dataObj);
+  const eventIds = Object.keys(dataObj);
+
+  // could sort tourney times if needed here
+  const [sortedPlayerCount, sortedEventIds] = sortArraysbyArray(tourneyTimes, [
+    playerCount,
+    eventIds,
+  ]);
+  const playerPlacements = getPlayerPlacements(dataObj, uid, sortedEventIds);
+
+  let trace1 = {
+    x: Array.from(sortedPlayerCount.keys()),
+    y: sortedPlayerCount,
+    type: "bar",
+    width: 0.9,
+    marker: {
+      color: "black",
+    },
+  };
+
+  console.log(Array.from(sortedPlayerCount.keys()));
+  console.log(sortedPlayerCount);
+  // ugly create second part -------------
+  const attendedKeys = Array.from(playerPlacements.keys()).filter((k) => {
+    if (playerPlacements[k] !== 0) {
+      return true;
+    }
+  });
+
+  let trace2 = {
+    x: attendedKeys,
+    y: attendedKeys.map((k) => {
+      return sortedPlayerCount[k] - playerPlacements[k];
+    }),
+    // type: "scatter",
+    mode: "markers+text",
+    marker: {
+      size: 0.9 * 30,
+      color: "#cd0024",
+    },
+    text: attendedKeys.map((k) => {
+      return String(playerPlacements[k]);
+    }),
+    textposition: "inside",
+    textfont: {
+      color: "white",
+      size: 20,
+      // family: "Arial",
+    },
+  };
+  // end ugly -----------
+
+  let graphData = [trace1, trace2];
+
+  let layout = {
+    // title: "BAN Performance over Time: " + name,
+    showlegend: false,
+    font: {
+      size: 24,
+    },
+    xaxis: {
+      range: [-1, sortedPlayerCount.length],
+      showticklabels: false,
+      // title: {
+      //   text: "All Ban Tournaments",
+      // },
+    },
+    yaxis: {
+      range: [0, Math.max(...sortedPlayerCount)],
+      // title: {
+      //   text: "Entrant Count",
+      // },
+    },
+    paper_bgcolor: "#e8bc4d",
+    plot_bgcolor: "#e8bc4d",
+    margin: {
+      l: 35,
+      r: 0,
+      t: 0,
+      b: 0,
+    },
+    width: 900,
+    height: 300,
+  };
+
+  Plotly.newPlot(component, graphData, layout, { staticPlot: true });
+
+  const numCompeted = attendedKeys.length;
+  const bestPlacement = Math.min(
+    ...attendedKeys.map((k) => {
+      return playerPlacements[k];
+    })
+  );
+  return [numCompeted, bestPlacement];
+}
+
 export {
   testStuffOut,
   onlyBeginners,
@@ -285,4 +385,5 @@ export {
   createUserArrays,
   sortArraysbyArray,
   graphFromUserID,
+  statpageGraphFromUserID,
 };

@@ -130,9 +130,44 @@ async function fillEventHolderWithData(eventHolder) {
   return eventHolder;
 }
 
+async function getPlayersFromSlug(slugString) {
+  const playerObj = {};
+
+  return fetch("https://api.start.gg/gql/alpha", {
+    method: "POST",
+    headers: {
+      Authorization: auth,
+      Accept: "application/json",
+      "content-type": "application/json",
+    },
+    body: JSON.stringify({
+      query:
+        "query players($slug: String) { event(slug: $slug) { entrants(query: {page: 1, perPage: 500}) { nodes { name participants{user{id}}}}}}",
+      // "query eidQuery($eid: ID) {event(id: $eid) { startAt numEntrants entrants(query: {page: 1, perPage: 500}) {nodes { name standing{placement} participants{user{id}}}}}}",
+      // "query eventIDS($ownerID:ID!) {tournaments(query: {page: 1, perPage: 500, filter: {ownerId: $ownerID}}) {nodes { name id events{id}}}}",
+      // "query EventQuery($slug:String) {event(slug: $slug) {id name}}",
+      variables: {
+        slug: slugString,
+      },
+    }),
+  })
+    .then((r) => r.json())
+    .then((data) => {
+      // console.log(data.data.event.entrants.nodes);
+      data.data.event.entrants.nodes.map((p) => {
+        const name = p.name;
+        const uid = p.participants[0].user.id;
+        playerObj[uid] = name;
+      });
+      // console.log(playerObj);
+      return playerObj;
+    });
+}
+
 export {
   getEventIdsFromOwner,
   getDataFromEventIds,
   fillEventHolderWithData,
   getDataFromSpecificEvents,
+  getPlayersFromSlug,
 };
