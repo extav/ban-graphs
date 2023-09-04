@@ -8,6 +8,8 @@ import {
   graphFromUserID,
 } from "./plotly-testing";
 
+import StatOverlay from "./Statscreen-resized.svg";
+
 // console.log(onlyBeginners(data));
 // console.log(createUserArrays(onlyBeginners(data)));
 // const [test1, test2] = createUserArrays(onlyBeginners(data));
@@ -179,4 +181,22 @@ function createPlayerSelectionBar() {
   return playerSelectionBar;
 }
 
-export { createPageStructure, fillInfoSection };
+function createStreamStatpageStructure() {
+  const content = document.createElement("div");
+  content.classList.add("sp-content");
+
+  const controls = document.createElement("div");
+  controls.classList.add("sp-controls");
+
+  const overlay = document.createElement("div");
+  overlay.classList.add("sp-overlay");
+  const img = document.createElement("img");
+  img.src = StatOverlay;
+  overlay.appendChild(img);
+
+  content.appendChild(overlay);
+  content.appendChild(controls);
+  document.body.appendChild(content);
+}
+
+export { createPageStructure, fillInfoSection, createStreamStatpageStructure };

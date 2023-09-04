@@ -3,9 +3,9 @@ const path = require("path");
 
 module.exports = {
   mode: "development",
-  entry: "./src/index.js",
+  entry: { index: "./src/index.js" },
   output: {
-    filename: "main.js",
+    filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
   },
@@ -13,6 +13,11 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: "BAN Stats",
+      // template: "./src/assets/index.html"
+    }),
+    new HtmlWebpackPlugin({
+      title: "BAN Statpage",
+      filename: "statpage.html",
     }),
   ],
   module: {
