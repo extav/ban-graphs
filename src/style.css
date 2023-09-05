@@ -182,7 +182,7 @@ figure.main-section {
 
 #sp-p1name,
 #sp-p2name {
-  font-size: 3rem;
+  font-size: 4rem;
   color: #e8bc4d;
   display: flex;
   align-items: center;
@@ -215,7 +215,7 @@ figure.main-section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 15px;
+  gap: 50px;
 }
 
 .sp-stat-item {
@@ -225,10 +225,13 @@ figure.main-section {
   align-items: center;
 }
 
-/* #sp-stat-item > h1,
-#sp-stat-item > h2 {
-  text-align: center;
-} */
+.sp-stat-item > h1 {
+  font-size: 2rem;
+}
+
+.sp-stat-item > h2 {
+  font-size: 3rem;
+}
 
 #sp-p1choose,
 #sp-p2choose {
@@ -258,5 +261,4 @@ figure.main-section {
 
 #statpage-update-button {
   font-size: 2rem;
-  
 }

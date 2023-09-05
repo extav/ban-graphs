@@ -53,7 +53,7 @@ if (document.title === "BAN Statpage") {
   console.log("running second option");
   createPageStructure();
   const infoText =
-    "This is the result of a for-fun and for-learning project. I make no promises that things aren't broken, but maybe you can have some fun looking at the data like I have. I'll probably add features, pages, and general improvements over time to make it less scuffed. Or maybe I won't. Enjoy. -Extav";
+    "This is the result of a for-fun and for-learning project. I make no promises that things aren't broken, but maybe you can have some fun looking at the data like I have. I'll probably add features, pages, and general improvements over time to make it less scuffed. Or maybe I won't. Please address any inquiries to extav on Discord. Enjoy. -Extav ";
   fillInfoSection("Information", infoText);
 }
 // getSomeData();
