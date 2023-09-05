@@ -255,8 +255,10 @@ function graphFromUserID(component, dataObj, uid, name) {
       //   text: "Entrant Count",
       // },
     },
-    paper_bgcolor: "#fcd720",
-    plot_bgcolor: "#fcd720",
+    // paper_bgcolor: "#fcd720",
+    // plot_bgcolor: "#fcd720",
+    paper_bgcolor: "#e8bc4d",
+    plot_bgcolor: "#e8bc4d",
     margin: {
       l: 35,
       r: 0,
